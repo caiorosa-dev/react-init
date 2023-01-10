@@ -9,7 +9,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'build'),
 		filename: 'bundle_[hash].js',
-		publicPath: '/',
+		publicPath: '/public',
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
@@ -37,7 +37,7 @@ module.exports = {
 		]
 	},
 	devServer: {
-		port: 3000,
+		port: process.env.PORT || 3000,
 		historyApiFallback: true
 	}
 };
